@@ -1,0 +1,49 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\warehouseserver.bundle.scp.css",
+      "PackagePath": "staticwebassets\\warehouseserver.veimrrn4ww.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.warehouseserver.props",
+      "PackagePath": "build\\warehouseserver.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.warehouseserver.props",
+      "PackagePath": "buildMultiTargeting\\warehouseserver.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.warehouseserver.props",
+      "PackagePath": "buildTransitive\\warehouseserver.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.warehouseserver.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.warehouseserver.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

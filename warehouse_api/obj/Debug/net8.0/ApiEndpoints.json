@@ -1,0 +1,422 @@
+[
+  {
+    "ContainingType": "warehouse_api.Controllers.DonViTinhController",
+    "Method": "CreateDonViTinh",
+    "RelativePath": "api/donvitinh/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "d",
+        "Type": "warehouse_api.Models.DonViTinh",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.DonViTinhController",
+    "Method": "DeleteDonViTinh",
+    "RelativePath": "api/donvitinh/delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.DonViTinhController",
+    "Method": "GetById",
+    "RelativePath": "api/donvitinh/get/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.DonViTinhController",
+    "Method": "GetAll",
+    "RelativePath": "api/donvitinh/getall",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[warehouse_api.Models.DonViTinh, warehouse_api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.DonViTinhController",
+    "Method": "UpdateDonViTinh",
+    "RelativePath": "api/donvitinh/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "d",
+        "Type": "warehouse_api.Models.DonViTinh",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.KhoController",
+    "Method": "CreateKho",
+    "RelativePath": "api/kho/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "k",
+        "Type": "warehouse_api.Models.Kho",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.KhoController",
+    "Method": "DeleteKho",
+    "RelativePath": "api/kho/delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.KhoController",
+    "Method": "GetById",
+    "RelativePath": "api/kho/get/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.KhoController",
+    "Method": "GetAll",
+    "RelativePath": "api/kho/getall",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[warehouse_api.Models.Kho, warehouse_api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.KhoController",
+    "Method": "UpdateKho",
+    "RelativePath": "api/kho/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "k",
+        "Type": "warehouse_api.Models.Kho",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.LoaiSanPhamController",
+    "Method": "CreateLoaiSanPham",
+    "RelativePath": "api/loaisanpham/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "l",
+        "Type": "warehouse_api.Models.LoaiSanPham",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.LoaiSanPhamController",
+    "Method": "DeleteLoaiSanPham",
+    "RelativePath": "api/loaisanpham/delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.LoaiSanPhamController",
+    "Method": "GetById",
+    "RelativePath": "api/loaisanpham/get/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.LoaiSanPhamController",
+    "Method": "GetAll",
+    "RelativePath": "api/loaisanpham/getall",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[warehouse_api.Models.LoaiSanPham, warehouse_api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.LoaiSanPhamController",
+    "Method": "UpdateLoaiSanPham",
+    "RelativePath": "api/loaisanpham/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "l",
+        "Type": "warehouse_api.Models.LoaiSanPham",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.NhaCungCapController",
+    "Method": "CreateNhaCungCap",
+    "RelativePath": "api/nhacungcap/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "n",
+        "Type": "warehouse_api.Models.NhaCungCap",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.NhaCungCapController",
+    "Method": "DeleteNhaCungCap",
+    "RelativePath": "api/nhacungcap/delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.NhaCungCapController",
+    "Method": "GetById",
+    "RelativePath": "api/nhacungcap/get/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.NhaCungCapController",
+    "Method": "GetAll",
+    "RelativePath": "api/nhacungcap/getall",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[warehouse_api.Models.NhaCungCap, warehouse_api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.NhaCungCapController",
+    "Method": "UpdateNhaCungCap",
+    "RelativePath": "api/nhacungcap/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "n",
+        "Type": "warehouse_api.Models.NhaCungCap",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.SanPhamController",
+    "Method": "CreateSanPham",
+    "RelativePath": "api/sanpham/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "s",
+        "Type": "warehouse_api.Models.SanPham",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.SanPhamController",
+    "Method": "DeleteSanPham",
+    "RelativePath": "api/sanpham/delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.SanPhamController",
+    "Method": "GetById",
+    "RelativePath": "api/sanpham/get/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.SanPhamController",
+    "Method": "GetAll",
+    "RelativePath": "api/sanpham/getall",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[warehouse_api.Models.SanPham, warehouse_api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.SanPhamController",
+    "Method": "UpdateSanPham",
+    "RelativePath": "api/sanpham/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "s",
+        "Type": "warehouse_api.Models.SanPham",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

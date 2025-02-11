@@ -1,0 +1,743 @@
+{
+  "Version": 1,
+  "Hash": "Ct61u76LFaVmP6g3HWx5SJ7pMkggaozuqus4rtO40Sc=",
+  "Source": "warehouseserver",
+  "BasePath": "_content/warehouseserver",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "warehouseserver\\wwwroot",
+      "Source": "warehouseserver",
+      "ContentRoot": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\wwwroot\\",
+      "BasePath": "_content/warehouseserver",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\obj\\Debug\\net8.0\\scopedcss\\bundle\\warehouseserver.styles.css",
+      "SourceId": "warehouseserver",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\obj\\Debug\\net8.0\\scopedcss\\bundle\\",
+      "BasePath": "_content/warehouseserver",
+      "RelativePath": "warehouseserver#[.{fingerprint}]?.styles.css",
+      "AssetKind": "All",
+      "AssetMode": "CurrentProject",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ApplicationBundle",
+      "Fingerprint": "veimrrn4ww",
+      "Integrity": "t71GdOlTIQwPL3rpnSK5AzG7pLocnxiPsvdfBAmk0BA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\obj\\Debug\\net8.0\\scopedcss\\bundle\\warehouseserver.styles.css"
+    },
+    {
+      "Identity": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\warehouseserver.bundle.scp.css",
+      "SourceId": "warehouseserver",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\",
+      "BasePath": "_content/warehouseserver",
+      "RelativePath": "warehouseserver#[.{fingerprint}]!.bundle.scp.css",
+      "AssetKind": "All",
+      "AssetMode": "Reference",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "ScopedCss",
+      "AssetTraitValue": "ProjectBundle",
+      "Fingerprint": "veimrrn4ww",
+      "Integrity": "t71GdOlTIQwPL3rpnSK5AzG7pLocnxiPsvdfBAmk0BA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\warehouseserver.bundle.scp.css"
+    },
+    {
+      "Identity": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\wwwroot\\app.css",
+      "SourceId": "warehouseserver",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\wwwroot\\",
+      "BasePath": "_content/warehouseserver",
+      "RelativePath": "app#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "da95v2qkru",
+      "Integrity": "u9qEka1auR7E3rd3/8/j8hkQdSOYj9bRJ4nYiFDR1sE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\app.css"
+    },
+    {
+      "Identity": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "SourceId": "warehouseserver",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\wwwroot\\",
+      "BasePath": "_content/warehouseserver",
+      "RelativePath": "bootstrap/bootstrap.min#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "bpk8xqwxhs",
+      "Integrity": "z8OR40MowJ8GgK6P89Y+hiJK5+cclzFHzLhFQLL92bg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "SourceId": "warehouseserver",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\wwwroot\\",
+      "BasePath": "_content/warehouseserver",
+      "RelativePath": "bootstrap/bootstrap.min.css#[.{fingerprint}]?.map",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "8inm30yfxf",
+      "Integrity": "gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Identity": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\wwwroot\\favicon.png",
+      "SourceId": "warehouseserver",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\wwwroot\\",
+      "BasePath": "_content/warehouseserver",
+      "RelativePath": "favicon#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ifv42okdf2",
+      "Integrity": "4mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\favicon.png"
+    },
+    {
+      "Identity": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\wwwroot\\js\\site.js",
+      "SourceId": "warehouseserver",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\wwwroot\\",
+      "BasePath": "_content/warehouseserver",
+      "RelativePath": "js/site#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "u43hl2cp5i",
+      "Integrity": "4ljeieO136KqajAZ9hP0SB3Lv8LnF5vJt1Zbcx9kOuY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\site.js"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "app.css",
+      "AssetFile": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\wwwroot\\app.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2591"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"u9qEka1auR7E3rd3/8/j8hkQdSOYj9bRJ4nYiFDR1sE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 06 Feb 2025 13:06:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-u9qEka1auR7E3rd3/8/j8hkQdSOYj9bRJ4nYiFDR1sE="
+        }
+      ]
+    },
+    {
+      "Route": "app.da95v2qkru.css",
+      "AssetFile": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\wwwroot\\app.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2591"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"u9qEka1auR7E3rd3/8/j8hkQdSOYj9bRJ4nYiFDR1sE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 06 Feb 2025 13:06:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "da95v2qkru"
+        },
+        {
+          "Name": "label",
+          "Value": "app.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-u9qEka1auR7E3rd3/8/j8hkQdSOYj9bRJ4nYiFDR1sE="
+        }
+      ]
+    },
+    {
+      "Route": "bootstrap/bootstrap.min.bpk8xqwxhs.css",
+      "AssetFile": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "162720"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"z8OR40MowJ8GgK6P89Y+hiJK5+cclzFHzLhFQLL92bg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 06 Feb 2025 13:06:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "bpk8xqwxhs"
+        },
+        {
+          "Name": "label",
+          "Value": "bootstrap/bootstrap.min.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-z8OR40MowJ8GgK6P89Y+hiJK5+cclzFHzLhFQLL92bg="
+        }
+      ]
+    },
+    {
+      "Route": "bootstrap/bootstrap.min.css",
+      "AssetFile": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "162720"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"z8OR40MowJ8GgK6P89Y+hiJK5+cclzFHzLhFQLL92bg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 06 Feb 2025 13:06:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-z8OR40MowJ8GgK6P89Y+hiJK5+cclzFHzLhFQLL92bg="
+        }
+      ]
+    },
+    {
+      "Route": "bootstrap/bootstrap.min.css.8inm30yfxf.map",
+      "AssetFile": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "449111"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 06 Feb 2025 13:06:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8inm30yfxf"
+        },
+        {
+          "Name": "label",
+          "Value": "bootstrap/bootstrap.min.css.map"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ="
+        }
+      ]
+    },
+    {
+      "Route": "bootstrap/bootstrap.min.css.map",
+      "AssetFile": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "449111"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/plain"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 06 Feb 2025 13:06:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gBwg2tmA0Ci2u54gMF1jNCVku6vznarkLS6D76htNNQ="
+        }
+      ]
+    },
+    {
+      "Route": "favicon.ifv42okdf2.png",
+      "AssetFile": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\wwwroot\\favicon.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1148"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 06 Feb 2025 13:06:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ifv42okdf2"
+        },
+        {
+          "Name": "label",
+          "Value": "favicon.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg="
+        }
+      ]
+    },
+    {
+      "Route": "favicon.png",
+      "AssetFile": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\wwwroot\\favicon.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1148"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 06 Feb 2025 13:06:36 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4mWsDy3aHl36ZbGt8zByK7Pvd4kRUoNgTYzRnwmPHwg="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.js",
+      "AssetFile": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\wwwroot\\js\\site.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "82"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4ljeieO136KqajAZ9hP0SB3Lv8LnF5vJt1Zbcx9kOuY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Feb 2025 04:55:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4ljeieO136KqajAZ9hP0SB3Lv8LnF5vJt1Zbcx9kOuY="
+        }
+      ]
+    },
+    {
+      "Route": "js/site.u43hl2cp5i.js",
+      "AssetFile": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\wwwroot\\js\\site.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "82"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4ljeieO136KqajAZ9hP0SB3Lv8LnF5vJt1Zbcx9kOuY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 11 Feb 2025 04:55:08 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "u43hl2cp5i"
+        },
+        {
+          "Name": "label",
+          "Value": "js/site.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4ljeieO136KqajAZ9hP0SB3Lv8LnF5vJt1Zbcx9kOuY="
+        }
+      ]
+    },
+    {
+      "Route": "warehouseserver.bundle.scp.css",
+      "AssetFile": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\warehouseserver.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5913"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"t71GdOlTIQwPL3rpnSK5AzG7pLocnxiPsvdfBAmk0BA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 06 Feb 2025 13:37:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-t71GdOlTIQwPL3rpnSK5AzG7pLocnxiPsvdfBAmk0BA="
+        }
+      ]
+    },
+    {
+      "Route": "warehouseserver.styles.css",
+      "AssetFile": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\obj\\Debug\\net8.0\\scopedcss\\bundle\\warehouseserver.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5913"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"t71GdOlTIQwPL3rpnSK5AzG7pLocnxiPsvdfBAmk0BA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 06 Feb 2025 13:37:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-t71GdOlTIQwPL3rpnSK5AzG7pLocnxiPsvdfBAmk0BA="
+        }
+      ]
+    },
+    {
+      "Route": "warehouseserver.veimrrn4ww.bundle.scp.css",
+      "AssetFile": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\warehouseserver.bundle.scp.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5913"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"t71GdOlTIQwPL3rpnSK5AzG7pLocnxiPsvdfBAmk0BA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 06 Feb 2025 13:37:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "veimrrn4ww"
+        },
+        {
+          "Name": "label",
+          "Value": "warehouseserver.bundle.scp.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-t71GdOlTIQwPL3rpnSK5AzG7pLocnxiPsvdfBAmk0BA="
+        }
+      ]
+    },
+    {
+      "Route": "warehouseserver.veimrrn4ww.styles.css",
+      "AssetFile": "C:\\Users\\nguyendangynhi\\Documents\\ThucTapSKSolution1\\WarehouseSystem\\warehouseserver\\obj\\Debug\\net8.0\\scopedcss\\bundle\\warehouseserver.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "5913"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"t71GdOlTIQwPL3rpnSK5AzG7pLocnxiPsvdfBAmk0BA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 06 Feb 2025 13:37:53 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "veimrrn4ww"
+        },
+        {
+          "Name": "label",
+          "Value": "warehouseserver.styles.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-t71GdOlTIQwPL3rpnSK5AzG7pLocnxiPsvdfBAmk0BA="
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+﻿@page "/create-donvitinh"
+@using System.ComponentModel.DataAnnotations
+@using warehouseserver.Services
+@using warehouseserver.Models
+@using Microsoft.AspNetCore.Components.Forms
+@inject HttpClient HttpClient
+@inject DonViTinhService donViTinhService
+@inject NavigationManager NavigationManager
+
+<h3>Tạo Đơn Vị Tính Mới</h3>
+
+<EditForm Model="@DonViTinh" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+   
+    <div class="form-group">
+        <label for="tendonvitinh">Tên Đơn Vị Tính</label>
+        <InputText id="tendonvitinh"
+                   @bind-Value=DonViTinh.TenDonViTinh
+                   class="form-control" />
+        <ValidationMessage For="@(() => DonViTinh.TenDonViTinh)" class="text-danger" />
+    </div>
+
+    <div class="form-group">
+        <label for="ghi_chu">Ghi Chú</label>
+        <InputText id="ghi_chu"
+                   @bind-Value=DonViTinh.GhiChu
+                   class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Lưu</button>
+    @if (!string.IsNullOrEmpty(Message))
+    {
+        <div class="alert @(IsSuccess ? "alert-success" : "alert-danger") fade show mt-2"
+             role="alert" style="transition: opacity 1s;">
+            @Message
+        </div>
+    }
+</EditForm>
+
+@code {
+    [Parameter] public EventCallback OnSuccess { get; set; }
+    private DonViTinh DonViTinh = new DonViTinh();
+    private string Message;
+    private bool IsSuccess;
+
+    private async Task HandleValidSubmit()
+    {
+        Message = string.Empty;
+        IsSuccess = false;
+
+        var response = await HttpClient.PostAsJsonAsync("api/donvitinh/create", DonViTinh);
+        var result = await response.Content.ReadFromJsonAsync<Dictionary<string, string>>();
+
+        if (result != null && result.ContainsKey("message"))
+        {
+            Message = result["message"];
+            IsSuccess = (Message == "Tao thanh cong!");
+            StateHasChanged();
+            await Task.Delay(2000);
+            Message = string.Empty;
+            await OnSuccess.InvokeAsync();
+        }
+    }
+
+}
