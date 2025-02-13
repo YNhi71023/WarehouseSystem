@@ -7,9 +7,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
-
+builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://localhost:5041/") });
 builder.Services.AddScoped<DonViTinhService>();
+builder.Services.AddScoped<LoaiSanPhamService>();
+builder.Services.AddScoped<KhoService>();
+builder.Services.AddScoped<SanPhamService>();
+builder.Services.AddScoped<NhaCungCapService>();
 Dapper.DefaultTypeMap.MatchNamesWithUnderscores = true;
 
 var app = builder.Build();

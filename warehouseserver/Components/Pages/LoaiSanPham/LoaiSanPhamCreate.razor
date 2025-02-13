@@ -1,0 +1,74 @@
+﻿@page "/create-loaisanpham"
+@using System.ComponentModel.DataAnnotations
+@using warehouseserver.Services
+@using warehouseserver.Models
+@using Microsoft.AspNetCore.Components.Forms
+@inject HttpClient HttpClient
+@inject LoaiSanPhamService loaiSanPhamService
+@inject DonViTinhService donViTinhService
+@inject NavigationManager NavigationManager
+
+
+<EditForm Model="@LoaiSanPham" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+
+    <div class="form-group">
+        <label for="ma_lsp">Mã LSP</label>
+        <InputText id="ma_lsp"
+                   @bind-Value=LoaiSanPham.MaLSP
+                   class="form-control" />
+        <ValidationMessage For="@(() => LoaiSanPham.MaLSP)" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label for="ten_lsp">Tên LSP</label>
+        <InputText id="ten_lsp"
+                   @bind-Value=LoaiSanPham.TenLSP
+                   class="form-control" />
+        <ValidationMessage For="@(() => LoaiSanPham.TenLSP)" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label for="ghi_chu">Ghi chú</label>
+        <InputText id="ghi_chu"
+                   @bind-Value=LoaiSanPham.GhiChu
+                   class="form-control" />
+    </div>
+    
+
+    <button type="submit" class="btn btn-primary">Lưu</button>
+
+    @if (!string.IsNullOrEmpty(Message))
+    {
+        <div class="alert @(IsSuccess ? "alert-success" : "alert-danger") fade show mt-2"
+             role="alert" style="transition: opacity 1s;">
+            @Message
+        </div>
+    }
+</EditForm>
+
+
+@code {
+    [Parameter] public EventCallback OnSuccess { get; set; }
+    private LoaiSanPham LoaiSanPham = new LoaiSanPham();
+    private string Message;
+    private bool IsSuccess;
+
+    private async Task HandleValidSubmit()
+    {
+        Message = string.Empty;
+        IsSuccess = false;
+
+        var response = await HttpClient.PostAsJsonAsync("api/loaisanpham/create", LoaiSanPham);
+        var result = await response.Content.ReadFromJsonAsync<Dictionary<string, string>>();
+
+        if (result != null && result.ContainsKey("message"))
+        {
+            Message = result["message"];
+            IsSuccess = (Message == "Tao thanh cong!");
+            StateHasChanged();
+            await Task.Delay(2000);
+            Message = string.Empty;
+            await OnSuccess.InvokeAsync();
+        }
+    }
+
+}

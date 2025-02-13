@@ -4,6 +4,6 @@
     {
         public int Id { get; set; }
         public string TenKho { get; set; }
-        public string GhiChu { get; set; }
+        public string? GhiChu { get; set; }
     }
 }

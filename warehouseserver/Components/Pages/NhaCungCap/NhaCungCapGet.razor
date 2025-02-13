@@ -1,0 +1,143 @@
+﻿@page "/nhacungcap"
+@using warehouseserver.Services
+@using warehouseserver.Models
+@inject IJSRuntime JS
+@inject NhaCungCapService NhaCungCapService
+@inject KhoService KhoService
+@inject NavigationManager NavigationManager
+@inject HttpClient HttpClient
+
+<h3>Danh sách Kho</h3>
+
+<button class="btn btn-success mb-3" @onclick="OpenCreateDialog">Tạo Mới</button>
+
+@if (nhacungcap == null)
+{
+    <p>Đang tải dữ liệu...</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Mã NCC</th>
+                <th>Tên NCC</th>
+                <th>Ghi chú</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in nhacungcap)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.MaNCC</td>
+                    <td>@item.TenNCC</td>
+                    <td>@item.GhiChu</td>
+                    <td>
+                        <button class="btn btn-warning" @onclick="() => OpenUpdateDialog(item.Id)">Sửa</button>
+                        <button class="btn btn-danger" @onclick="() => DeleteNhaCungCap(item.Id)">Xóa</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+<!-- Dialog tạo mới -->
+@if (showCreateDialog)
+{
+    <div class="modal fade show d-block" style="background: rgba(0,0,0,0.5);">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Tạo Kho</h5>
+                    <button type="button" class="close" @onclick="CloseCreateDialog">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <NhaCungCapCreate OnSuccess="@HandleCreateSuccess" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<!-- Dialog cập nhật -->
+@if (showUpdateDialog)
+{
+    <div class="modal fade show d-block" style="background: rgba(0,0,0,0.5);">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Cập nhật Kho</h5>
+                    <button type="button" class="close" @onclick="CloseUpdateDialog">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <NhaCungCapUpdate Id="@selectedId" OnSuccess="@HandleUpdateSuccess" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@code {
+    private List<NhaCungCap> nhacungcap;
+    private bool showCreateDialog = false;
+    private bool showUpdateDialog = false;
+    private int selectedId;
+
+    protected override async Task OnInitializedAsync()
+    {
+        nhacungcap = await NhaCungCapService.GetAllNhaCungCap();
+    }
+
+    private void OpenCreateDialog()
+    {
+        showCreateDialog = true;
+    }
+
+    private void CloseCreateDialog()
+    {
+        showCreateDialog = false;
+    }
+
+    private void OpenUpdateDialog(int id)
+    {
+        selectedId = id;
+        showUpdateDialog = true;
+    }
+
+    private void CloseUpdateDialog()
+    {
+        showUpdateDialog = false;
+    }
+
+    private async Task DeleteNhaCungCap(int id)
+    {
+        bool confirmDelete = await JS.InvokeAsync<bool>("confirm", "Bạn có chắc chắn muốn xóa?");
+        if (!confirmDelete) return;
+
+        var response = await HttpClient.DeleteAsync($"api/nhacungcap/delete/{id}");
+        if (response.IsSuccessStatusCode)
+        {
+            nhacungcap = await NhaCungCapService.GetAllNhaCungCap(); 
+        }
+        else
+        {
+            Console.WriteLine("Xóa thất bại!");
+        }
+    }
+
+    private async Task HandleCreateSuccess()
+    {
+        showCreateDialog = false;
+        nhacungcap = await NhaCungCapService.GetAllNhaCungCap();
+    }
+
+    private async Task HandleUpdateSuccess()
+    {
+        showUpdateDialog = false;
+        nhacungcap = await NhaCungCapService.GetAllNhaCungCap();
+    }
+}

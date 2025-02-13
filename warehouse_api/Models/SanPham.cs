@@ -7,7 +7,7 @@
         public string TenSP { get; set; }
         public int LSPId { get; set; }
         public int DVTId { get; set; }
-        public string GhiChu { get; set; }
+        public string? GhiChu { get; set; }
         public string TenLSP { get; set; }
         public string TenDonViTinh { get; set; }
     }

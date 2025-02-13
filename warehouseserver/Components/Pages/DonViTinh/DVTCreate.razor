@@ -7,7 +7,6 @@
 @inject DonViTinhService donViTinhService
 @inject NavigationManager NavigationManager
 
-<h3>Tạo Đơn Vị Tính Mới</h3>
 
 <EditForm Model="@DonViTinh" OnValidSubmit="@HandleValidSubmit">
     <DataAnnotationsValidator />
@@ -28,6 +27,7 @@
     </div>
 
     <button type="submit" class="btn btn-primary">Lưu</button>
+
     @if (!string.IsNullOrEmpty(Message))
     {
         <div class="alert @(IsSuccess ? "alert-success" : "alert-danger") fade show mt-2"

@@ -32,10 +32,6 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Pages/Counter.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDb3VudGVyLnJhem9y
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Pages/DonViTinh/DonViTinhGet.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEb25WaVRpbmhcRG9uVmlUaW5oR2V0LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -56,8 +52,52 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Pages/Weather.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
+[C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Pages/Kho/KhoCreate.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xLaG9cS2hvQ3JlYXRlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Pages/Kho/KhoGet.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xLaG9cS2hvR2V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Pages/Kho/KhoUpdate.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xLaG9cS2hvVXBkYXRlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Pages/LoaiSanPham/LoaiSanPhamCreate.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2FpU2FuUGhhbVxMb2FpU2FuUGhhbUNyZWF0ZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Pages/LoaiSanPham/LoaiSanPhamGet.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2FpU2FuUGhhbVxMb2FpU2FuUGhhbUdldC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Pages/LoaiSanPham/LoaiSanPhamUpdate.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2FpU2FuUGhhbVxMb2FpU2FuUGhhbVVwZGF0ZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Pages/NhaCungCap/NhaCungCapCreate.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xOaGFDdW5nQ2FwXE5oYUN1bmdDYXBDcmVhdGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Pages/NhaCungCap/NhaCungCapGet.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xOaGFDdW5nQ2FwXE5oYUN1bmdDYXBHZXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Pages/NhaCungCap/NhaCungCapUpdate.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xOaGFDdW5nQ2FwXE5oYUN1bmdDYXBVcGRhdGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Pages/SanPham/SanPhamCreate.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTYW5QaGFtXFNhblBoYW1DcmVhdGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Pages/SanPham/SanPhamGet.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTYW5QaGFtXFNhblBoYW1HZXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Pages/SanPham/SanPhamUpdate.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTYW5QaGFtXFNhblBoYW1VcGRhdGUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Routes.razor]

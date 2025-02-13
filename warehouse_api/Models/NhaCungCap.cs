@@ -5,6 +5,6 @@
         public int Id { get; set; }
         public string MaNCC { get; set; }
         public string TenNCC { get; set; }
-        public string GhiChu { get; set; }
+        public string? GhiChu { get; set; }
     }
 }

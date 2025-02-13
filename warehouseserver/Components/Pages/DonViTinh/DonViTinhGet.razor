@@ -118,7 +118,7 @@ else
         var response = await HttpClient.DeleteAsync($"api/donvitinh/delete/{id}");
         if (response.IsSuccessStatusCode)
         {
-            donvitinh = await DonViTinhService.GetAllDonViTinh(); // Cập nhật lại danh sách sau khi xóa
+            donvitinh = await DonViTinhService.GetAllDonViTinh(); 
         }
         else
         {

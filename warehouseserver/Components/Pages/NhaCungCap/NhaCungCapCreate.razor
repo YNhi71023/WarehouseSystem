@@ -1,0 +1,61 @@
+﻿@page "/create-nhacungcap"
+@using System.ComponentModel.DataAnnotations
+@using warehouseserver.Services
+@using warehouseserver.Models
+@using Microsoft.AspNetCore.Components.Forms
+@inject HttpClient HttpClient
+@inject NhaCungCapService nhaCungCapService
+@inject DonViTinhService donViTinhService
+@inject NavigationManager NavigationManager
+
+
+<EditForm Model="@NhaCungCap" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <label for="ma_ncc">Mã NCC</label>
+        <InputText id="ma_ncc"
+                   @bind-Value=NhaCungCap.MaNCC
+                   class="form-control" />
+        <ValidationMessage For="@(() => NhaCungCap.MaNCC)" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label for="ten_ncc">Tên NCC</label>
+        <InputText id="ten_ncc"
+                   @bind-Value=NhaCungCap.TenNCC
+                   class="form-control" />
+        <ValidationMessage For="@(() => NhaCungCap.TenNCC)" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label for="ghi_chu">Ghi chú</label>
+        <InputText id="ghi_chu"
+                   @bind-Value=NhaCungCap.GhiChu
+                   class="form-control" />
+    </div>
+</EditForm>
+
+@code {
+    [Parameter] public EventCallback OnSuccess { get; set; }
+    private NhaCungCap NhaCungCap = new NhaCungCap();
+    private string Message;
+    private bool IsSuccess;
+
+    private async Task HandleValidSubmit()
+    {
+        Message = string.Empty;
+        IsSuccess = false;
+
+        var response = await HttpClient.PostAsJsonAsync("api/nhacungcap/create", NhaCungCap);
+        var result = await response.Content.ReadFromJsonAsync<Dictionary<string, string>>();
+
+        if (result != null && result.ContainsKey("message"))
+        {
+            Message = result["message"];
+            IsSuccess = (Message == "Tao thanh cong!");
+            StateHasChanged();
+            await Task.Delay(2000);
+            Message = string.Empty;
+            await OnSuccess.InvokeAsync();
+        }
+    }
+
+}

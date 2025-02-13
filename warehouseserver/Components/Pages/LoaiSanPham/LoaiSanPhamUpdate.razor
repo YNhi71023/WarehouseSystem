@@ -1,0 +1,57 @@
+﻿@using warehouseserver.Services
+@using warehouseserver.Models
+@using Microsoft.AspNetCore.Components.Forms
+@inject LoaiSanPhamService LoaiSanPhamService
+
+<EditForm Model="@LoaiSanPham" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <label for="ten_kho">Mã LSP</label>
+        <InputText id="ten_kho"
+                   @bind-Value=LoaiSanPham.MaLSP
+                   class="form-control" />
+        <ValidationMessage For="@(() => LoaiSanPham.MaLSP)" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label for="ten_kho">Tên LSP</label>
+        <InputText id="ten_kho"
+                   @bind-Value=LoaiSanPham.TenLSP
+                   class="form-control" />
+        <ValidationMessage For="@(() => LoaiSanPham.TenLSP)" class="text-danger" />
+    </div>
+    <div class="form-group">
+        <label for="ten_kho">Ghi chú</label>
+        <InputText id="ten_kho"
+                   @bind-Value=LoaiSanPham.GhiChu
+                   class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Lưu</button>
+</EditForm>
+
+@code {
+    [Parameter] public int Id { get; set; }
+    [Parameter] public EventCallback OnSuccess { get; set; }
+
+    private LoaiSanPham LoaiSanPham = new LoaiSanPham();
+
+    protected override async Task OnParametersSetAsync()
+    {
+        LoaiSanPham = await LoaiSanPhamService.GetLoaiSanPhamById(Id);
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        if (LoaiSanPham != null)
+        {
+            var success = await LoaiSanPhamService.UpdateLoaiSanPham(LoaiSanPham);
+            if (success)
+            {
+                await OnSuccess.InvokeAsync();
+            }
+            else
+            {
+                Console.WriteLine("Cập nhật thất bại!");
+            }
+        }
+    }
+}
