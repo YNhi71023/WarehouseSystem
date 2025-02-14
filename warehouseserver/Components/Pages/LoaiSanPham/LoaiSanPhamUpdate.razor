@@ -6,22 +6,22 @@
 <EditForm Model="@LoaiSanPham" OnValidSubmit="@HandleValidSubmit">
     <DataAnnotationsValidator />
     <div class="form-group">
-        <label for="ten_kho">Mã LSP</label>
-        <InputText id="ten_kho"
+        <label for="malsp">Mã LSP</label>
+        <InputText id="malsp"
                    @bind-Value=LoaiSanPham.MaLSP
                    class="form-control" />
         <ValidationMessage For="@(() => LoaiSanPham.MaLSP)" class="text-danger" />
     </div>
     <div class="form-group">
-        <label for="ten_kho">Tên LSP</label>
-        <InputText id="ten_kho"
+        <label for="tenlsp">Tên LSP</label>
+        <InputText id="tenlsp"
                    @bind-Value=LoaiSanPham.TenLSP
                    class="form-control" />
         <ValidationMessage For="@(() => LoaiSanPham.TenLSP)" class="text-danger" />
     </div>
     <div class="form-group">
-        <label for="ten_kho">Ghi chú</label>
-        <InputText id="ten_kho"
+        <label for="ghichu">Ghi chú</label>
+        <InputText id="ghichu"
                    @bind-Value=LoaiSanPham.GhiChu
                    class="form-control" />
     </div>

@@ -1,26 +1,26 @@
 ﻿@using warehouseserver.Services
 @using warehouseserver.Models
 @using Microsoft.AspNetCore.Components.Forms
-@inject DonViTinhService DonViTinhService
+@inject KhoService khoService
 
-<EditForm Model="@DonViTinh" OnValidSubmit="@HandleValidSubmit">
+<EditForm Model="@kho" OnValidSubmit="@HandleValidSubmit">
     <DataAnnotationsValidator />
 
     <div class="form-group">
-        <label for="tendonvitinh">Tên Đơn Vị Tính</label>
-        <InputText id="tendonvitinh"
-                   @bind-Value=DonViTinh.TenDonViTinh
+        <label for="tenkho">Tên kho</label>
+        <InputText id="tenkho"
+                   @bind-Value=kho.TenKho
                    class="form-control" />
-        <ValidationMessage For="@(() => DonViTinh.TenDonViTinh)" class="text-danger" />
+        <ValidationMessage For="@(() => kho.TenKho)" class="text-danger" />
     </div>
-
     <div class="form-group">
-        <label for="ghi_chu">Ghi Chú</label>
-        <InputText id="ghi_chu"
-                   @bind-Value=DonViTinh.GhiChu
+        <label for="ghichu">Ghi chú</label>
+        <InputText id="ghichu"
+                   @bind-Value=kho.GhiChu
                    class="form-control" />
     </div>
 
+    
     <button type="submit" class="btn btn-primary">Lưu</button>
 </EditForm>
 
@@ -28,18 +28,18 @@
     [Parameter] public int Id { get; set; }
     [Parameter] public EventCallback OnSuccess { get; set; }
 
-    private DonViTinh DonViTinh = new DonViTinh();
+    private Kho kho = new Kho();
 
     protected override async Task OnParametersSetAsync()
     {
-        DonViTinh = await DonViTinhService.GetDonViTinhById(Id);
+        kho = await khoService.GetKhoById(Id);
     }
 
     private async Task HandleValidSubmit()
     {
-        if (DonViTinh != null)
+        if (kho != null)
         {
-            var success = await DonViTinhService.UpdateDonViTinh(DonViTinh);
+            var success = await khoService.UpdateKho(kho);
             if (success)
             {
                 await OnSuccess.InvokeAsync();

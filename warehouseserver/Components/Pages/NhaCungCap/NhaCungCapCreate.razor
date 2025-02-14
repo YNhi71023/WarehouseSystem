@@ -31,6 +31,17 @@
                    @bind-Value=NhaCungCap.GhiChu
                    class="form-control" />
     </div>
+
+
+    <button type="submit" class="btn btn-primary">Lưu</button>
+
+    @if (!string.IsNullOrEmpty(Message))
+    {
+        <div class="alert @(IsSuccess ? "alert-success" : "alert-danger") fade show mt-2"
+             role="alert" style="transition: opacity 1s;">
+            @Message
+        </div>
+    }
 </EditForm>
 
 @code {

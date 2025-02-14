@@ -88,6 +88,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xOaGFDdW5nQ2FwXE5oYUN1bmdDYXBVcGRhdGUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Pages/NhapKho/NhapKhoCreate.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xOaGFwS2hvXE5oYXBLaG9DcmVhdGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Pages/NhapKho/NhapKhoGet.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xOaGFwS2hvXE5oYXBLaG9HZXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Pages/SanPham/SanPhamCreate.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTYW5QaGFtXFNhblBoYW1DcmVhdGUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -98,6 +106,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Pages/SanPham/SanPhamUpdate.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTYW5QaGFtXFNhblBoYW1VcGRhdGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Pages/XuatKho/XuatKhoCreate.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xYdWF0S2hvXFh1YXRLaG9DcmVhdGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Pages/XuatKho/XuatKhoGet.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xYdWF0S2hvXFh1YXRLaG9HZXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Routes.razor]

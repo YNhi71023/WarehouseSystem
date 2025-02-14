@@ -1,0 +1,105 @@
+﻿@page "/create-nhapkho"
+@using System.ComponentModel.DataAnnotations
+@using warehouseserver.Services
+@using warehouseserver.Models
+@using Microsoft.AspNetCore.Components.Forms
+@inject HttpClient HttpClient
+@inject SanPhamService sanPhamService
+@inject LoaiSanPhamService loaiSanPhamService
+@inject NhaCungCapService nhaCungCapService
+@inject DonViTinhService donViTinhService
+@inject KhoService khoService
+@inject NhapKhoService nhapKhoService
+@inject NavigationManager NavigationManager
+
+
+<EditForm Model="@nhapKho" OnValidSubmit="@CreateNhapKhoSubmit">
+    <DataAnnotationsValidator />
+    <div class="form-group">
+        <label for="ma_sp">Số phiếu nhập kho</label>
+        <InputText id="ma_sp"
+                   @bind-Value=nhapKho.SoPhieuNhapKho
+                   class="form-control" />
+        <ValidationMessage For="@(() => nhapKho.SoPhieuNhapKho)" class="text-danger" />
+    </div>
+    <RadzenLabel Text="Kho" Component="DropDownBindValue" />
+    <RadzenDropDown @bind-Value=@nhapKho.KhoId
+                    Data=@KhoList
+                    TextProperty="TenKho"
+                    ValueProperty="Id"
+                    Style="width: 100%; max-width: 400px;"
+                    Change="@(args => nhapKho.TenKho = KhoList.FirstOrDefault(x => x.Id == nhapKho.KhoId)?.TenKho)" />
+    <RadzenLabel Text="Nhà cung cấp" Component="DropDownBindValue" />
+    <RadzenDropDown @bind-Value=@nhapKho.NCCId
+                    Data=@NhaCungCapList
+                    TextProperty="TenNCC"
+                    ValueProperty="Id"
+                    Style="width: 100%; max-width: 400px;"
+                    Change="@(args => nhapKho.TenNCC = NhaCungCapList.FirstOrDefault(x => x.Id == nhapKho.NCCId)?.TenNCC)" />
+    <RadzenLabel Text="Ngày nhập kho" Component="RadzenDatePickerBindValue" />
+    <RadzenDatePicker @bind-Value=@nhapKho.NgayNhapKho Name="RadzenDatePickerBindValue" ShowCalendarWeek />
+    <div class="form-group">
+        <label for="ma_sp">Ghi chú</label>
+        <InputText id="ma_sp"
+                   @bind-Value=nhapKho.GhiChu
+                   class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary">Lưu</button>
+   
+    @if (!string.IsNullOrEmpty(Message))
+    {
+        <div class="alert @(IsSuccess ? "alert-success" : "alert-danger") fade show mt-2"
+             role="alert" style="transition: opacity 1s;">
+            @Message
+        </div>
+    }
+</EditForm>
+
+@code {
+    [Parameter] public EventCallback OnSuccess { get; set; }
+    private NhapKho nhapKho = new NhapKho();
+    private string Message;
+    private bool IsSuccess;
+    private List<Kho> KhoList = new List<Kho>();
+    private List<NhaCungCap> NhaCungCapList = new List<NhaCungCap>();
+    protected override async Task OnInitializedAsync()
+    {
+        KhoList = await khoService.GetAllKho();
+        NhaCungCapList = await nhaCungCapService.GetAllNhaCungCap();
+    }
+    private async Task CreateNhapKhoSubmit()
+    {
+        Message = string.Empty;
+        IsSuccess = false;
+
+        try
+        {
+            var response = await HttpClient.PostAsJsonAsync("api/nhapkho/create", nhapKho);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var result = await response.Content.ReadFromJsonAsync<Dictionary<string, string>>();
+
+                if (result != null && result.ContainsKey("message"))
+                {
+                    Message = result["message"];
+                    IsSuccess = (Message == "Tạo thành công!");
+
+                    StateHasChanged();
+                    await Task.Delay(2000);
+                    Message = string.Empty;
+                    await OnSuccess.InvokeAsync();
+                }
+            }
+            else
+            {
+                Message = $"Lỗi {response.StatusCode}: {await response.Content.ReadAsStringAsync()}";
+            }
+        }
+        catch (Exception ex)
+        {
+            Message = $"Lỗi: {ex.Message}";
+        }
+    }
+
+}

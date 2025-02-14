@@ -2,6 +2,7 @@
 @using warehouseserver.Services
 @using warehouseserver.Models
 @inject IJSRuntime JS
+@inject DonViTinhService DonViTinhService
 @inject SanPhamService SanPhamService
 @inject NavigationManager NavigationManager
 @inject HttpClient HttpClient
@@ -55,7 +56,7 @@ else
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Tạo Đơn Vị Tính Mới</h5>
+                    <h5 class="modal-title">Tạo Sản Phẩm Mới</h5>
                     <button type="button" class="close" @onclick="CloseCreateDialog">&times;</button>
                 </div>
                 <div class="modal-body">
@@ -73,7 +74,7 @@ else
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Cập nhật Đơn Vị Tính</h5>
+                    <h5 class="modal-title">Cập nhật Sản Phẩm</h5>
                     <button type="button" class="close" @onclick="CloseUpdateDialog">&times;</button>
                 </div>
                 <div class="modal-body">

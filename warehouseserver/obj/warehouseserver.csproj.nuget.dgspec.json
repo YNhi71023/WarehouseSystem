@@ -77,6 +77,10 @@
             "Microsoft.Extensions.Http": {
               "target": "Package",
               "version": "[9.0.1, )"
+            },
+            "Radzen.Blazor": {
+              "target": "Package",
+              "version": "[5.9.9, )"
             }
           },
           "imports": [

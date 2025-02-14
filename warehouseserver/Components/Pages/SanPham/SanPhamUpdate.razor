@@ -1,41 +1,50 @@
 ﻿@using warehouseserver.Services
 @using warehouseserver.Models
 @using Microsoft.AspNetCore.Components.Forms
-@inject DonViTinhService DonViTinhService
-@inject SanPhamService SanPhamService
+@inject SanPhamService sanPhamService
+@inject LoaiSanPhamService loaiSanPhamService
+@inject NhaCungCapService nhaCungCapService
+@inject DonViTinhService donViTinhService
 
-<EditForm Model="@SanPham" OnValidSubmit="@HandleValidSubmit">
+<EditForm Model="@sanPham" OnValidSubmit="@UpdateSPSubmit">
     <DataAnnotationsValidator />
     <div class="form-group">
-        <label for="ma_sp">Mã SP</label>
-        <InputText id="ma_sp"
-                   @bind-Value=SanPham.MaSP
+        <label for="ma_lsp">Mã SP</label>
+        <InputText id="ma_lsp"
+                   @bind-Value=sanPham.MaSP
                    class="form-control" />
-        <ValidationMessage For="@(() => SanPham.MaSP)" class="text-danger" />
+        <ValidationMessage For="@(() => sanPham.MaSP)" class="text-danger" />
     </div>
     <div class="form-group">
-        <label for="ten_sp">Tên Sản Phẩm</label>
-        <InputText id="ten_sp"
-                   @bind-Value=SanPham.TenSP
+        <label for="ten_lsp">Tên SP</label>
+        <InputText id="ten_lsp"
+                   @bind-Value=sanPham.TenSP
                    class="form-control" />
-        <ValidationMessage For="@(() => SanPham.TenSP)" class="text-danger" />
+        <ValidationMessage For="@(() => sanPham.TenSP)" class="text-danger" />
     </div>
-    <div class="form-group">
-        <label for="loaisanpham">Loại Sản Phẩm</label>
-        <InputText id="loaisanpham"
-                   @bind-Value=SanPham.TenLSP
-                   class="form-control" />
-        <ValidationMessage For="@(() => SanPham.TenSP)" class="text-danger" />
-    </div>
-    <div class="form-group">
-        <label for="donvitinh">Đơn Vị Tính</label>
-        <InputText id="donvitinh"
-                   @bind-Value=SanPham.TenDonViTinh
-                   class="form-control" />
-        <ValidationMessage For="@(() => SanPham.TenDonViTinh)" class="text-danger" />
-    </div>
+    <RadzenLabel Text="Loại sản phẩm" Component="DropDownBindValue" />
+    <RadzenDropDown @bind-Value=@sanPham.LSPId
+                    Data=@LoaiSanPhamList
+                    TextProperty="TenLSP"
+                    ValueProperty="Id"
+                    Style="width: 100%; max-width: 400px;"
+                    Change="@(args => sanPham.TenLSP = LoaiSanPhamList.FirstOrDefault(x => x.Id == sanPham.LSPId)?.TenLSP)" />
+    <RadzenLabel Text="Đơn vị tính" Component="DropDownBindValue" />
 
 
+    <RadzenDropDown @bind-Value=@sanPham.DVTId
+                    Data=@DonViTinhList
+                    TextProperty="TenDonViTinh"
+                    ValueProperty="Id"
+                    Style="width: 100%; max-width: 400px;"
+                    Change="@(args => sanPham.TenDonViTinh = DonViTinhList.FirstOrDefault(x => x.Id == sanPham.DVTId)?.TenDonViTinh)" />
+
+    <div class="form-group">
+        <label for="ghi_chu">Ghi chú</label>
+        <InputText id="ghi_chu"
+                   @bind-Value=sanPham.GhiChu
+                   class="form-control" />
+    </div>
     <button type="submit" class="btn btn-primary">Lưu</button>
 </EditForm>
 
@@ -43,18 +52,24 @@
     [Parameter] public int Id { get; set; }
     [Parameter] public EventCallback OnSuccess { get; set; }
 
-    private SanPham SanPham = new SanPham();
-
+    private SanPham sanPham = new SanPham();
+    private List<LoaiSanPham> LoaiSanPhamList = new List<LoaiSanPham>();
+    private List<DonViTinh> DonViTinhList = new List<DonViTinh>();
+    protected override async Task OnInitializedAsync()
+    {
+        LoaiSanPhamList = await loaiSanPhamService.GetAllLoaiSanPham();
+        DonViTinhList = await donViTinhService.GetAllDonViTinh();
+    }
     protected override async Task OnParametersSetAsync()
     {
-        SanPham = await SanPhamService.GetSanPhamById(Id);
+        sanPham = await sanPhamService.GetSanPhamById(Id);
     }
 
-    private async Task HandleValidSubmit()
+    private async Task UpdateSPSubmit()
     {
-        if (SanPham != null)
+        if (sanPham != null)
         {
-            var success = await SanPhamService.UpdateSanPham(SanPham);
+            var success = await sanPhamService.UpdateSanPham(sanPham);
             if (success)
             {
                 await OnSuccess.InvokeAsync();

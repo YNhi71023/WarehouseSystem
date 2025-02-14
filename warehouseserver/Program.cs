@@ -1,3 +1,4 @@
+using Radzen;
 using warehouseserver.Components;
 using warehouseserver.Services;
 
@@ -9,11 +10,14 @@ builder.Services.AddRazorComponents()
 
 builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri("http://localhost:5041/") });
+builder.Services.AddRadzenComponents();
 builder.Services.AddScoped<DonViTinhService>();
 builder.Services.AddScoped<LoaiSanPhamService>();
 builder.Services.AddScoped<KhoService>();
 builder.Services.AddScoped<SanPhamService>();
 builder.Services.AddScoped<NhaCungCapService>();
+builder.Services.AddScoped<NhapKhoService>();
+builder.Services.AddScoped<XuatKhoService>();
 Dapper.DefaultTypeMap.MatchNamesWithUnderscores = true;
 
 var app = builder.Build();

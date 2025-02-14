@@ -589,6 +589,121 @@
         }
       }
     },
+    "/api/nhapkho/getall": {
+      "get": {
+        "tags": [
+          "NhapKho"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DonViTinh"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DonViTinh"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/DonViTinh"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/nhapkho/get/{id}": {
+      "get": {
+        "tags": [
+          "NhapKho"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/nhapkho/create": {
+      "post": {
+        "tags": [
+          "NhapKho"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NhapKho"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NhapKho"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NhapKho"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/nhapkho/delete/{id}": {
+      "delete": {
+        "tags": [
+          "NhapKho"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/sanpham/getall": {
       "get": {
         "tags": [
@@ -734,6 +849,121 @@
           }
         }
       }
+    },
+    "/api/xuatkho/getall": {
+      "get": {
+        "tags": [
+          "XuatKho"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/XuatKho"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/XuatKho"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/XuatKho"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/xuatkho/get/{id}": {
+      "get": {
+        "tags": [
+          "XuatKho"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/xuatkho/create": {
+      "post": {
+        "tags": [
+          "XuatKho"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/XuatKho"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/XuatKho"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/XuatKho"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/xuatkho/delete/{id}": {
+      "delete": {
+        "tags": [
+          "XuatKho"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -818,6 +1048,44 @@
         },
         "additionalProperties": false
       },
+      "NhapKho": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "soPhieuNhapKho": {
+            "type": "string",
+            "nullable": true
+          },
+          "khoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "nccId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ngayNhapKho": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "ghiChu": {
+            "type": "string",
+            "nullable": true
+          },
+          "tenKho": {
+            "type": "string",
+            "nullable": true
+          },
+          "tenNCC": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "SanPham": {
         "type": "object",
         "properties": {
@@ -850,6 +1118,37 @@
             "nullable": true
           },
           "tenDonViTinh": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "XuatKho": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "soPhieuXuatKho": {
+            "type": "string",
+            "nullable": true
+          },
+          "khoID": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "ngayXuatKho": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "ghiChu": {
+            "type": "string",
+            "nullable": true
+          },
+          "tenKho": {
             "type": "string",
             "nullable": true
           }

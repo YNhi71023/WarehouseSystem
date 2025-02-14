@@ -14,6 +14,8 @@ builder.Services.AddScoped<LoaiSanPhamRepository>();
 builder.Services.AddScoped<SanPhamRepository>();
 builder.Services.AddScoped<NhaCungCapRepository>();
 builder.Services.AddScoped<KhoRepository>();
+builder.Services.AddScoped<NhapKhoRepository>();
+builder.Services.AddScoped<XuatKhoRepository>();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>

@@ -336,6 +336,74 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "warehouse_api.Controllers.NhapKhoController",
+    "Method": "CreateNhapKho",
+    "RelativePath": "api/nhapkho/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nk",
+        "Type": "warehouse_api.Models.NhapKho",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.NhapKhoController",
+    "Method": "DeleteNhapKho",
+    "RelativePath": "api/nhapkho/delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.NhapKhoController",
+    "Method": "GetById",
+    "RelativePath": "api/nhapkho/get/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.NhapKhoController",
+    "Method": "GetAll",
+    "RelativePath": "api/nhapkho/getall",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[warehouse_api.Models.DonViTinh, warehouse_api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "warehouse_api.Controllers.SanPhamController",
     "Method": "CreateSanPham",
     "RelativePath": "api/sanpham/create",
@@ -418,5 +486,73 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.XuatKhoController",
+    "Method": "CreateXuatKho",
+    "RelativePath": "api/xuatkho/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "x",
+        "Type": "warehouse_api.Models.XuatKho",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.XuatKhoController",
+    "Method": "DeleteXuatKho",
+    "RelativePath": "api/xuatkho/delete/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.XuatKhoController",
+    "Method": "GetById",
+    "RelativePath": "api/xuatkho/get/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.XuatKhoController",
+    "Method": "GetAll",
+    "RelativePath": "api/xuatkho/getall",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[warehouse_api.Models.XuatKho, warehouse_api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

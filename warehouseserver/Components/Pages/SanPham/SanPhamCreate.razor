@@ -5,33 +5,59 @@
 @using Microsoft.AspNetCore.Components.Forms
 @inject HttpClient HttpClient
 @inject SanPhamService sanPhamService
+@inject LoaiSanPhamService loaiSanPhamService
+@inject NhaCungCapService nhaCungCapService
+@inject DonViTinhService donViTinhService
 @inject NavigationManager NavigationManager
 
 
-<EditForm Model="@SanPham" OnValidSubmit="@HandleValidSubmit">
+<EditForm Model="@sanPham" OnValidSubmit="@CreateSanPhamSubmit">
     <DataAnnotationsValidator />
-   
     <div class="form-group">
         <label for="ma_sp">Mã SP</label>
         <InputText id="ma_sp"
-                   @bind-Value=SanPham.MaSP
-                   class="form-control" />
-        <ValidationMessage For="@(() => SanPham.MaSP)" class="text-danger" />
+        @bind-Value=sanPham.MaSP
+        class="form-control" />
+        <ValidationMessage For="@(() => sanPham.MaSP)" class="text-danger" />
     </div>
     <div class="form-group">
-        <label for="ten_sp">Tên Sản Phẩm</label>
+        <label for="ten_sp">Tên SP</label>
         <InputText id="ten_sp"
-                   @bind-Value=SanPham.TenSP
-                   class="form-control" />
-        <ValidationMessage For="@(() => SanPham.TenSP)" class="text-danger" />
+        @bind-Value=sanPham.TenSP
+        class="form-control" />
+        <ValidationMessage For="@(() => sanPham.TenSP)" class="text-danger" />
     </div>
-
+  
+    <RadzenLabel Text="Loại sản phẩm" Component="DropDownBindValue" />
+    <RadzenDropDown @bind-Value=@sanPham.LSPId
+                    Data=@LoaiSanPhamList
+                    TextProperty="TenLSP"
+                    ValueProperty="Id"
+                    Style="width: 100%; max-width: 400px;"
+                    Change="@(args => sanPham.TenLSP = LoaiSanPhamList.FirstOrDefault(x => x.Id == sanPham.LSPId)?.TenLSP)" />
+    <RadzenLabel Text="Đơn vị tính" Component="DropDownBindValue" />
+    <RadzenDropDown @bind-Value=@sanPham.DVTId
+                    Data=@DonViTinhList
+                    TextProperty="TenDonViTinh"
+                    ValueProperty="Id"
+                    Style="width: 100%; max-width: 400px;"
+                    Change="@(args => sanPham.TenDonViTinh = DonViTinhList.FirstOrDefault(x => x.Id == sanPham.DVTId)?.TenDonViTinh)" />
+    
+    <div class="form-group">
+        <label for="ghi_chu">Ghi chú</label>
+        <InputText id="ghi_chu"
+        @bind-Value=sanPham.GhiChu
+        class="form-control" />
+    </div>
     <button type="submit" class="btn btn-primary">Lưu</button>
-
+    <p>
+        @sanPham.LSPId
+        @sanPham.DVTId
+    </p>
     @if (!string.IsNullOrEmpty(Message))
     {
         <div class="alert @(IsSuccess ? "alert-success" : "alert-danger") fade show mt-2"
-             role="alert" style="transition: opacity 1s;">
+        role="alert" style="transition: opacity 1s;">
             @Message
         </div>
     }
@@ -39,26 +65,37 @@
 
 @code {
     [Parameter] public EventCallback OnSuccess { get; set; }
-    private SanPham SanPham = new SanPham();
+    private SanPham sanPham = new SanPham();
     private string Message;
     private bool IsSuccess;
-
-    private async Task HandleValidSubmit()
+    private List<LoaiSanPham> LoaiSanPhamList = new List<LoaiSanPham>();
+    private List<DonViTinh> DonViTinhList = new List<DonViTinh>();
+    protected override async Task OnInitializedAsync()
+    {
+        LoaiSanPhamList = await loaiSanPhamService.GetAllLoaiSanPham();
+        DonViTinhList = await donViTinhService.GetAllDonViTinh();
+    }
+    private async Task CreateSanPhamSubmit()
     {
         Message = string.Empty;
         IsSuccess = false;
 
-        var response = await HttpClient.PostAsJsonAsync("api/sanpham/create", SanPham);
-        var result = await response.Content.ReadFromJsonAsync<Dictionary<string, string>>();
+        var response = await HttpClient.PostAsJsonAsync("api/sanpham/create", sanPham);
 
-        if (result != null && result.ContainsKey("message"))
+        if (response.IsSuccessStatusCode)
         {
-            Message = result["message"];
-            IsSuccess = (Message == "Tao thanh cong!");
-            StateHasChanged();
-            await Task.Delay(2000);
-            Message = string.Empty;
-            await OnSuccess.InvokeAsync();
+            var result = await response.Content.ReadFromJsonAsync<Dictionary<string, string>>();
+
+            if (result != null && result.ContainsKey("message"))
+            {
+                Message = result["message"];
+                IsSuccess = (Message == "Tạo thành công!");
+
+                StateHasChanged();
+                await Task.Delay(2000);
+                Message = string.Empty;
+                await OnSuccess.InvokeAsync();
+            }
         }
     }
 

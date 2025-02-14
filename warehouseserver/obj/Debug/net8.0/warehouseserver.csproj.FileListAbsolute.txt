@@ -177,3 +177,5 @@ C:\Users\nguyendangynhi\Documents\ThucTapSKSolution1\WarehouseSystem\warehousese
 C:\Users\nguyendangynhi\Documents\ThucTapSKSolution1\WarehouseSystem\warehouseserver\obj\Debug\net8.0\warehouseserver.pdb
 C:\Users\nguyendangynhi\Documents\ThucTapSKSolution1\WarehouseSystem\warehouseserver\obj\Debug\net8.0\warehouseserver.genruntimeconfig.cache
 C:\Users\nguyendangynhi\Documents\ThucTapSKSolution1\WarehouseSystem\warehouseserver\obj\Debug\net8.0\ref\warehouseserver.dll
+C:\Users\nguyendangynhi\Documents\ThucTapSKSolution1\WarehouseSystem\warehouseserver\bin\Debug\net8.0\Radzen.Blazor.dll
+C:\Users\nguyendangynhi\Documents\ThucTapSKSolution1\WarehouseSystem\warehouseserver\bin\Debug\net8.0\System.Linq.Dynamic.Core.dll
