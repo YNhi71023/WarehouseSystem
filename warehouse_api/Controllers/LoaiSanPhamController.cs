@@ -42,7 +42,7 @@ namespace warehouse_api.Controllers
                 return BadRequest("Dữ liệu không hợp lệ.");
             }
             Console.WriteLine($"Nhận được: {l.MaLSP}, Tên: {l.TenLSP}, Ghi chú: {l.GhiChu}");
-            var notification = await _repository.CreateLoaiSanPham(l);
+            var notification = await _repository.CreateLoaiSanPham( l);
             return Ok(new { Message = notification });
         }
         [HttpPut("update")]
@@ -61,7 +61,7 @@ namespace warehouse_api.Controllers
         [HttpDelete("delete/{id}")]
         public async Task<IActionResult> DeleteLoaiSanPham(int id)
         {
-            var result = await _repository.DeleteLoaiSanPham(id);
+            var result = await _repository.DeleteLoaiSanPham( id);
             if (result)
                 return Ok(new { message = "Xóa thành công!" });
             return NotFound(new { message = "Không tìm thấy loại sản phẩm!" });

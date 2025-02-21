@@ -1,0 +1,74 @@
+﻿@page "/baocaonhapkho"
+@* <h3>Báo cáo nhập kho</h3> *@
+
+
+@* @code { *@
+@*     DateTime? fromdate; *@
+@*     DateTime? todate; *@
+@* } *@
+@using warehouseserver.Services
+@using warehouseserver.Models
+@using Microsoft.AspNetCore.Components.Forms
+@inject NhapKhoService NhapKhoService
+
+<h3>Tra cứu phiếu nhập kho</h3>
+     <RadzenLabel Text="Từ ngày" Component="RadzenDatePickerBindValue" />
+    <RadzenDatePicker @bind-Value=dateRange.FromDate Name="RadzenDatePickerBindValue" ShowCalendarWeek />
+    <RadzenLabel Text="Đến ngày" Component="RadzenDatePickerBindValue" />
+    <RadzenDatePicker @bind-Value=dateRange.ToDate Name="RadzenDatePickerBindValue" ShowCalendarWeek />
+    <div class="mt-2 mb-2">
+    <button class="btn btn-primary" @onclick="GetPhieuNhap">Tra cứu</button>
+    </div>
+
+
+@if (loading)
+{
+    <p>Đang tải dữ liệu...</p>
+}
+
+@if (phieuNhapList?.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Số Phiếu</th>
+                <th>Tên Kho</th>
+                <th>Nhà Cung Cấp</th>
+                <th>Ngày Nhập</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in phieuNhapList)
+            {
+                <tr>
+                    <td>@item.SoPhieuNhapKho</td>
+                    <td>@item.TenKho</td>
+                    <td>@item.TenNCC</td>
+                    <td>@item.NgayNhapKho.ToString("dd/MM/yyyy")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else if (!loading && phieuNhapList?.Count == 0)
+{
+    <p>Không có phiếu nhập nào trong khoảng thời gian này.</p>
+}
+
+@code {
+    private NhapKhoDate dateRange = new NhapKhoDate
+        {
+            FromDate = DateTime.Today.AddDays(-7),
+            ToDate = DateTime.Today
+        };
+
+    private List<BaoCaoNhapKhoDate> phieuNhapList = new();
+    private bool loading = false;
+
+    private async Task GetPhieuNhap()
+    {
+        loading = true;
+        phieuNhapList = await NhapKhoService.GetPhieuNhapByDateRange(dateRange);
+        loading = false;
+    }
+}

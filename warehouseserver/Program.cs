@@ -18,6 +18,7 @@ builder.Services.AddScoped<SanPhamService>();
 builder.Services.AddScoped<NhaCungCapService>();
 builder.Services.AddScoped<NhapKhoService>();
 builder.Services.AddScoped<XuatKhoService>();
+builder.Services.AddScoped<DialogService>();
 Dapper.DefaultTypeMap.MatchNamesWithUnderscores = true;
 
 var app = builder.Build();

@@ -12,48 +12,53 @@
 @inject NhapKhoService nhapKhoService
 @inject NavigationManager NavigationManager
 
-
 <EditForm Model="@nhapKho" OnValidSubmit="@CreateNhapKhoSubmit">
-    <DataAnnotationsValidator />
-    <div class="form-group">
-        <label for="ma_sp">Số phiếu nhập kho</label>
-        <InputText id="ma_sp"
-                   @bind-Value=nhapKho.SoPhieuNhapKho
-                   class="form-control" />
-        <ValidationMessage For="@(() => nhapKho.SoPhieuNhapKho)" class="text-danger" />
-    </div>
-    <RadzenLabel Text="Kho" Component="DropDownBindValue" />
-    <RadzenDropDown @bind-Value=@nhapKho.KhoId
-                    Data=@KhoList
-                    TextProperty="TenKho"
-                    ValueProperty="Id"
-                    Style="width: 100%; max-width: 400px;"
-                    Change="@(args => nhapKho.TenKho = KhoList.FirstOrDefault(x => x.Id == nhapKho.KhoId)?.TenKho)" />
-    <RadzenLabel Text="Nhà cung cấp" Component="DropDownBindValue" />
-    <RadzenDropDown @bind-Value=@nhapKho.NCCId
-                    Data=@NhaCungCapList
-                    TextProperty="TenNCC"
-                    ValueProperty="Id"
-                    Style="width: 100%; max-width: 400px;"
-                    Change="@(args => nhapKho.TenNCC = NhaCungCapList.FirstOrDefault(x => x.Id == nhapKho.NCCId)?.TenNCC)" />
-    <RadzenLabel Text="Ngày nhập kho" Component="RadzenDatePickerBindValue" />
-    <RadzenDatePicker @bind-Value=@nhapKho.NgayNhapKho Name="RadzenDatePickerBindValue" ShowCalendarWeek />
-    <div class="form-group">
-        <label for="ma_sp">Ghi chú</label>
-        <InputText id="ma_sp"
-                   @bind-Value=nhapKho.GhiChu
-                   class="form-control" />
-    </div>
-    <button type="submit" class="btn btn-primary">Lưu</button>
+    <RadzenRow Class="mb-4">
+            <RadzenCard Style="padding: 1.5rem; box-shadow: 0px 4px 10px rgba(0,0,0,0.1); border-radius: 10px;">
+                <RadzenFieldset Text="Thông tin phiếu nhập" Icon="assignment">
+                    <RadzenRow>
+                    <RadzenFormField AllowFloatingLabel="false" Text="Số phiếu nhập kho" Class="form-field" Style="width: 100%;">
+                                <RadzenTextBox @bind-Value=nhapKho.SoPhieuNhapKho Style="width: 100%;" />
+                            </RadzenFormField>
+
+                            <RadzenFormField Text="Tên kho" Class="form-field" Style="width: 100%;">
+                                <RadzenDropDown @bind-Value=@nhapKho.KhoId
+                                                Data=@KhoList
+                                                TextProperty="TenKho"
+                                                ValueProperty="Id"
+                                                Style="width: 100%;" 
+                                                Change="@(args => nhapKho.TenKho = KhoList.FirstOrDefault(x => x.Id == nhapKho.KhoId)?.TenKho)" />
+                            </RadzenFormField>
+
+                            <RadzenFormField Text="Tên nhà cung cấp" Class="form-field" Style="width: 100%;">
+                                <RadzenDropDown @bind-Value=@nhapKho.NCCId
+                                                Data=@NhaCungCapList
+                                                TextProperty="TenNCC"
+                                                ValueProperty="Id"
+                                                Style="width: 100%;"
+                                                Change="@(args => nhapKho.TenNCC = NhaCungCapList.FirstOrDefault(x => x.Id == nhapKho.NCCId)?.TenNCC)" />
+
+                            </RadzenFormField>
+
+                    <RadzenFormField AllowFloatingLabel="false" Text="Ngày nhập kho" Class="form-field" Style="width: 100%;">
+                                <RadzenDatePicker @bind-Value=nhapKho.NgayNhapKho ShowCalendarWeek Style="width: 100%;" />
+                            </RadzenFormField>
+                    </RadzenRow>
+                </RadzenFieldset>
+            </RadzenCard>
+    </RadzenRow>
+    <button type="submit" class="btn btn-primary">Lưu</button> 
    
-    @if (!string.IsNullOrEmpty(Message))
+    @if (!string.IsNullOrEmpty(Message)) 
     {
         <div class="alert @(IsSuccess ? "alert-success" : "alert-danger") fade show mt-2"
              role="alert" style="transition: opacity 1s;">
             @Message
         </div>
     }
+
 </EditForm>
+
 
 @code {
     [Parameter] public EventCallback OnSuccess { get; set; }

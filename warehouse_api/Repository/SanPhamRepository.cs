@@ -17,8 +17,12 @@ namespace warehouse_api.Repository
 
         public async Task<IEnumerable<SanPham>> GetAllSanPham()
         {
-            using var connection = new SqlConnection(_connectionString);
-            return await connection.QueryAsync<SanPham>("[dbo].[SanPham.GetAll]", commandType: CommandType.StoredProcedure);
+            using (var connection = new SqlConnection(_connectionString)) {
+                return await connection.QueryAsync<SanPham>(
+                    "[dbo].[SanPham.GetAll]",
+                    commandType: CommandType.StoredProcedure
+                    );
+            }
         }
 
         public async Task<SanPham?> GetByIdSanPham(int id)
@@ -34,7 +38,7 @@ namespace warehouse_api.Repository
                     commandType: CommandType.StoredProcedure);
             }
         }
-        public async Task<string> CreateSanPham(SanPham s)
+        public async Task<string> CreateSanPham( SanPham s)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -74,7 +78,7 @@ namespace warehouse_api.Repository
                 );
             }
         }
-        public async Task<bool> DeleteSanPham(int id)
+        public async Task<bool> DeleteSanPham( int id)
         {
             using (var connection = new SqlConnection(_connectionString))
             {

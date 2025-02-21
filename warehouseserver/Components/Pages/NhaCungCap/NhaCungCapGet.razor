@@ -8,17 +8,17 @@
 @inject HttpClient HttpClient
 
 <h3>Danh sách Nhà Cung Cấp</h3>
-
-<button class="btn btn-success mb-3" @onclick="OpenCreateDialog">Tạo Mới</button>
-
+<RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="1rem" Wrap="FlexWrap.Wrap">
+    <RadzenButton Click="OpenCreateDialog" Text="Tạo mới" Icon="add" ButtonStyle="ButtonStyle.Primary" Size="ButtonSize.Small" />
+</RadzenStack>
 @if (nhacungcap == null)
 {
     <p>Đang tải dữ liệu...</p>
 }
 else
 {
-    <table class="table">
-        <thead>
+    <table class="mt-3 table table-striped table-hover">
+        <thead class="table-dark">
             <tr>
                 <th>ID</th>
                 <th>Mã NCC</th>
@@ -36,8 +36,10 @@ else
                     <td>@item.TenNCC</td>
                     <td>@item.GhiChu</td>
                     <td>
-                        <button class="btn btn-warning" @onclick="() => OpenUpdateDialog(item.Id)">Sửa</button>
-                        <button class="btn btn-danger" @onclick="() => DeleteNhaCungCap(item.Id)">Xóa</button>
+                        <RadzenButton ButtonStyle="ButtonStyle.Warning" Size="ButtonSize.Small" Icon="edit"
+                                      Click="() => OpenUpdateDialog(item.Id)" />
+                        <RadzenButton ButtonStyle="ButtonStyle.Danger" Size="ButtonSize.Small" Icon="delete"
+                                      Click="() => DeleteNhaCungCap(item.Id)" />
                     </td>
                 </tr>
             }

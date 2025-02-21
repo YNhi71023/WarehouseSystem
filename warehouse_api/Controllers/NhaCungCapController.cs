@@ -41,7 +41,7 @@ namespace warehouse_api.Controllers
             {
                 return BadRequest("Dữ liệu không hợp lệ.");
             }
-            var notification = await _repository.CreateNhaCungCap(n);
+            var notification = await _repository.CreateNhaCungCap( n);
             return Ok(new { Message = notification });
         }
         [HttpPut("update")]
@@ -61,7 +61,7 @@ namespace warehouse_api.Controllers
         [HttpDelete("delete/{id}")]
         public async Task<IActionResult> DeleteNhaCungCap(int id)
         {
-            var result = await _repository.DeleteNhaCungCap(id);
+            var result = await _repository.DeleteNhaCungCap( id);
             if (result)
                 return Ok(new { message = "Xóa thành công!" });
             return NotFound(new { message = "Không tìm thấy nhà cung cấp!" });

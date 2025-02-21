@@ -88,6 +88,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xOaGFDdW5nQ2FwXE5oYUN1bmdDYXBVcGRhdGUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Pages/NhapKho/BaoCaoNhapKho.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xOaGFwS2hvXEJhb0Nhb05oYXBLaG8ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Pages/NhapKho/ChiTietNhapKhoView.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xOaGFwS2hvXENoaVRpZXROaGFwS2hvVmlldy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Pages/NhapKho/NhapKhoCreate.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xOaGFwS2hvXE5oYXBLaG9DcmVhdGUucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
@@ -106,6 +114,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Pages/SanPham/SanPhamUpdate.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xTYW5QaGFtXFNhblBoYW1VcGRhdGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Pages/XuatKho/ChiTietXuatKhoView.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xYdWF0S2hvXENoaVRpZXRYdWF0S2hvVmlldy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/nguyendangynhi/Documents/ThucTapSKSolution1/WarehouseSystem/warehouseserver/Components/Pages/XuatKho/XuatKhoCreate.razor]

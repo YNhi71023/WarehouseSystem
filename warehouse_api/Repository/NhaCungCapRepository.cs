@@ -18,8 +18,13 @@ namespace warehouse_api.Repository
 
         public async Task<IEnumerable<NhaCungCap>> GetAllNhaCungCap()
         {
-            using var connection = new SqlConnection(_connectionString);
-            return await connection.QueryAsync<NhaCungCap>("[dbo].[NCC.GetAll]", commandType: CommandType.StoredProcedure);
+            using (var connection = new SqlConnection(_connectionString))
+            {
+
+                return await connection.QueryAsync<NhaCungCap>(
+                    "[dbo].[NCC.GetAll]",
+                    commandType: CommandType.StoredProcedure);
+            }
         }
 
         public async Task<NhaCungCap?> GetByIdNhaCungCap(int id)

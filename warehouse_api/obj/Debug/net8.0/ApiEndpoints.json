@@ -337,6 +337,64 @@
   },
   {
     "ContainingType": "warehouse_api.Controllers.NhapKhoController",
+    "Method": "CreateChiTietNhapKho",
+    "RelativePath": "api/nhapkho/chitiet/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nk",
+        "Type": "warehouse_api.Models.ChiTietNhapKhoCreate",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.NhapKhoController",
+    "Method": "GetChiTietNhapKho",
+    "RelativePath": "api/nhapkho/chitiet/get/{nhapKhoId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nhapKhoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[warehouse_api.Models.ChiTietNhapKho, warehouse_api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.NhapKhoController",
+    "Method": "UpdateChiTietPhieuNhap",
+    "RelativePath": "api/nhapkho/chitiet/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "c",
+        "Type": "warehouse_api.Models.ChiTietNhapKhoCreate",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.NhapKhoController",
     "Method": "CreateNhapKho",
     "RelativePath": "api/nhapkho/create",
     "HttpMethod": "POST",
@@ -393,7 +451,7 @@
     "Parameters": [],
     "ReturnTypes": [
       {
-        "Type": "System.Collections.Generic.IEnumerable\u00601[[warehouse_api.Models.DonViTinh, warehouse_api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[warehouse_api.Models.NhapKho, warehouse_api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -402,6 +460,22 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.NhapKhoController",
+    "Method": "GetPhieuNhapByDateRange",
+    "RelativePath": "api/nhapkho/getbydaterange",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "d",
+        "Type": "warehouse_api.Models.NhapKhoDate",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
   },
   {
     "ContainingType": "warehouse_api.Controllers.SanPhamController",
@@ -482,6 +556,64 @@
       {
         "Name": "s",
         "Type": "warehouse_api.Models.SanPham",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.XuatKhoController",
+    "Method": "CreateChiTietXuatKho",
+    "RelativePath": "api/xuatkho/chitiet/create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "x",
+        "Type": "warehouse_api.Models.ChiTietXuatKho",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.XuatKhoController",
+    "Method": "GetChiTietXuatKho",
+    "RelativePath": "api/xuatkho/chitiet/get/{xuatKhoId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "xuatKhoId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[warehouse_api.Models.ChiTietXuatKho, warehouse_api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "warehouse_api.Controllers.XuatKhoController",
+    "Method": "UpdateChiTietXuatKho",
+    "RelativePath": "api/xuatkho/chitiet/update",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "x",
+        "Type": "warehouse_api.Models.ChiTietXuatKho",
         "IsRequired": true
       }
     ],

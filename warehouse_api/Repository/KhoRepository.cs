@@ -13,11 +13,14 @@ namespace warehouse_api.Repository
         {
             _connectionString = configuration.GetConnectionString("DefaultConnection");
         }
-
         public async Task<IEnumerable<Kho>> GetAllKho()
         {
-            using var connection = new SqlConnection(_connectionString);
-            return await connection.QueryAsync<Kho>("[dbo].[Kho.GetAll]", commandType: CommandType.StoredProcedure);
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                return await connection.QueryAsync<Kho>(
+                    "[dbo].[Kho.GetAll]",
+                    commandType: CommandType.StoredProcedure);
+            }
         }
         public async Task<Kho?> GetByIdKho(int id)
         {
@@ -50,7 +53,7 @@ namespace warehouse_api.Repository
             }
         }
 
-        public async Task<Kho?> UpdateKho(Kho k)
+        public async Task<Kho?> UpdateKho( Kho k)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
@@ -68,7 +71,7 @@ namespace warehouse_api.Repository
                 );
             }
         }
-        public async Task<bool> DeleteKho(int id)
+        public async Task<bool> DeleteKho( int id)
         {
             using (var connection = new SqlConnection(_connectionString))
             {

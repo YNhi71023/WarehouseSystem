@@ -50,6 +50,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Aspose.Words": {
+              "target": "Package",
+              "version": "[25.2.0, )"
+            },
+            "Blazored.SessionStorage": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
             "Dapper": {
               "target": "Package",
               "version": "[2.1.66, )"

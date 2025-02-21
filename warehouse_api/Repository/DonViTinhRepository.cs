@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using Microsoft.Data.SqlClient;
+using Microsoft.EntityFrameworkCore;
 using System.Data;
 using warehouse_api.Models;
 namespace warehouse_api.Repository
@@ -12,13 +13,22 @@ namespace warehouse_api.Repository
         {
             _connectionString = configuration.GetConnectionString("DefaultConnection");
         }
-        
+
+       
         public async Task<IEnumerable<DonViTinh>> GetAllDonViTinh()
         {
-            using var connection = new SqlConnection(_connectionString);
-            return await connection.QueryAsync<DonViTinh>("[dbo].[DonViTinh.GetAll]", commandType: CommandType.StoredProcedure);
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                //var parameters = new { user_login };
+
+                return await connection.QueryAsync<DonViTinh>(
+                    "[dbo].[DonViTinh.GetAll]",
+                    commandType: CommandType.StoredProcedure);
+            }
         }
-        public async Task<DonViTinh?> GetByIdDonViTinh(int id)
+
+
+        public async Task<DonViTinh?> GetByIdDonViTinh( int id)
         {
             using (var connection = new SqlConnection(_connectionString))
             {

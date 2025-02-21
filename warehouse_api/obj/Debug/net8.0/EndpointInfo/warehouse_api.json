@@ -73,6 +73,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DonViTinh"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/DonViTinh"
@@ -104,6 +109,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/DonViTinh"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/DonViTinh"
@@ -219,6 +229,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Kho"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Kho"
@@ -250,6 +265,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Kho"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Kho"
@@ -365,6 +385,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoaiSanPham"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/LoaiSanPham"
@@ -396,6 +421,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoaiSanPham"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/LoaiSanPham"
@@ -511,6 +541,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NhaCungCap"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/NhaCungCap"
@@ -542,6 +577,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NhaCungCap"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/NhaCungCap"
@@ -602,7 +642,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/DonViTinh"
+                    "$ref": "#/components/schemas/NhapKho"
                   }
                 }
               },
@@ -610,7 +650,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/DonViTinh"
+                    "$ref": "#/components/schemas/NhapKho"
                   }
                 }
               },
@@ -618,7 +658,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/DonViTinh"
+                    "$ref": "#/components/schemas/NhapKho"
                   }
                 }
               }
@@ -650,6 +690,91 @@
         }
       }
     },
+    "/api/nhapkho/chitiet/get/{nhapKhoId}": {
+      "get": {
+        "tags": [
+          "NhapKho"
+        ],
+        "parameters": [
+          {
+            "name": "nhapKhoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ChiTietNhapKho"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ChiTietNhapKho"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ChiTietNhapKho"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/nhapkho/getbydaterange": {
+      "post": {
+        "tags": [
+          "NhapKho"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NhapKhoDate"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NhapKhoDate"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NhapKhoDate"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NhapKhoDate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/nhapkho/create": {
       "post": {
         "tags": [
@@ -657,6 +782,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/NhapKho"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/NhapKho"
@@ -670,6 +800,78 @@
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/NhapKho"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/nhapkho/chitiet/create": {
+      "post": {
+        "tags": [
+          "NhapKho"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChiTietNhapKhoCreate"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChiTietNhapKhoCreate"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChiTietNhapKhoCreate"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChiTietNhapKhoCreate"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/nhapkho/chitiet/update": {
+      "put": {
+        "tags": [
+          "NhapKho"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChiTietNhapKhoCreate"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChiTietNhapKhoCreate"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChiTietNhapKhoCreate"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChiTietNhapKhoCreate"
               }
             }
           }
@@ -772,6 +974,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SanPham"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/SanPham"
@@ -803,6 +1010,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/SanPham"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/SanPham"
@@ -911,6 +1123,55 @@
         }
       }
     },
+    "/api/xuatkho/chitiet/get/{xuatKhoId}": {
+      "get": {
+        "tags": [
+          "XuatKho"
+        ],
+        "parameters": [
+          {
+            "name": "xuatKhoId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ChiTietXuatKho"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ChiTietXuatKho"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ChiTietXuatKho"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/xuatkho/create": {
       "post": {
         "tags": [
@@ -918,6 +1179,11 @@
         ],
         "requestBody": {
           "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/XuatKho"
+              }
+            },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/XuatKho"
@@ -931,6 +1197,78 @@
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/XuatKho"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/xuatkho/chitiet/create": {
+      "post": {
+        "tags": [
+          "XuatKho"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChiTietXuatKho"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChiTietXuatKho"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChiTietXuatKho"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChiTietXuatKho"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/xuatkho/chitiet/update": {
+      "put": {
+        "tags": [
+          "XuatKho"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json-patch+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChiTietXuatKho"
+              }
+            },
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChiTietXuatKho"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChiTietXuatKho"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChiTietXuatKho"
               }
             }
           }
@@ -968,6 +1306,80 @@
   },
   "components": {
     "schemas": {
+      "ChiTietNhapKho": {
+        "type": "object",
+        "properties": {
+          "slNhap": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "donGiaNhap": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "soPhieuNhapKho": {
+            "type": "string",
+            "nullable": true
+          },
+          "sanPhamId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenSanPham": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ChiTietNhapKhoCreate": {
+        "type": "object",
+        "properties": {
+          "nhapKhoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sanPhamId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "slNhap": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "donGiaNhap": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ChiTietXuatKho": {
+        "type": "object",
+        "properties": {
+          "xuatKhoId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "sanPhamId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "tenSanPham": {
+            "type": "string",
+            "nullable": true
+          },
+          "slXuat": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "donGiaXuat": {
+            "type": "integer",
+            "format": "int32"
+          }
+        },
+        "additionalProperties": false
+      },
       "DonViTinh": {
         "type": "object",
         "properties": {
@@ -1086,6 +1498,20 @@
         },
         "additionalProperties": false
       },
+      "NhapKhoDate": {
+        "type": "object",
+        "properties": {
+          "fromDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "toDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
       "SanPham": {
         "type": "object",
         "properties": {
@@ -1155,6 +1581,19 @@
         },
         "additionalProperties": false
       }
+    },
+    "securitySchemes": {
+      "Bearer": {
+        "type": "apiKey",
+        "description": "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 1safsfsdfdfd\"",
+        "name": "Authorization",
+        "in": "header"
+      }
     }
-  }
+  },
+  "security": [
+    {
+      "Bearer": [ ]
+    }
+  ]
 }

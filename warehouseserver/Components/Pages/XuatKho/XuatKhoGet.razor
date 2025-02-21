@@ -5,14 +5,15 @@
 @inject DonViTinhService DonViTinhService
 @inject NhaCungCapService NhaCungCapService
 @inject SanPhamService SanPhamService
-@inject NhapKhoService NhapKhoService
 @inject XuatKhoService XuatKhoService
 @inject NavigationManager NavigationManager
 @inject HttpClient HttpClient
 
 <h3>Danh sách Phiếu Xuất Kho</h3>
 
-<button class="btn btn-success mb-3" @onclick="OpenCreateDialog">Tạo Mới</button>
+<RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="1rem" Wrap="FlexWrap.Wrap">
+    <RadzenButton Click="OpenCreateDialog" Text="Tạo mới" Icon="add" ButtonStyle="ButtonStyle.Primary" Size="ButtonSize.Small" />
+</RadzenStack>
 
 @if (xuatkho == null)
 {
@@ -20,10 +21,10 @@
 }
 else
 {
-    <table class="table">
-        <thead>
+    <table class="mt-3 table table-striped table-hover">
+        <thead class="table-dark">
             <tr>
-                <th>ID</th>
+                <th>STT</th>
                 <th>Số phiếu xuất kho</th>
                 <th>Tên kho</th>
                 <th>Ngày xuất kho</th>
@@ -32,21 +33,25 @@ else
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in xuatkho)
+            @foreach (var item in xuatkho.Select((value, index) => new { value, index }))
             {
                 <tr>
-                    <td>@item.Id</td>
-                    <td>@item.SoPhieuXuatKho</td>
-                    <td>@item.TenKho</td>
-                    <td>@item.NgayXuatKho</td>
-                    <td>@item.GhiChu</td>
+                    <td>@(item.index + 1)</td>
+                    <td>@item.value.SoPhieuXuatKho</td>
+                    <td>@item.value.TenKho</td>
+                    <td>@item.value.NgayXuatKho</td>
+                    <td>@item.value.GhiChu</td>
                     <td>
-                        <button class="btn btn-danger" @onclick="() => DeleteXuatKho(item.Id)">Xóa</button>
+                        <RadzenButton ButtonStyle="ButtonStyle.Warning" Size="ButtonSize.Small" Icon="visibility"
+                                      Click="() => OpenViewDialog(item.value.Id)" />
+                        <RadzenButton ButtonStyle="ButtonStyle.Danger" Size="ButtonSize.Small" Icon="delete"
+                                      Click="() => DeleteXuatKho(item.value.Id)" />
                     </td>
                 </tr>
             }
         </tbody>
     </table>
+
 }
 
 <!-- Dialog tạo mới -->
@@ -66,10 +71,29 @@ else
         </div>
     </div>
 }
+
+@if (showViewDialog)
+{
+    <div class="modal fade show d-block" style="background: rgba(0,0,0,0.5);">
+        <div class="modal-dialog modal-lg" style="max-width: 900px; width: 90%; margin: auto;">
+            <div class="modal-content" style="border-radius: 12px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);">
+                <div class="modal-header">
+                    <h5 class="modal-title">Chi tiết phiếu xuất kho</h5>
+                    <button type="button" class="close" @onclick="CloseViewDialog">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <ChiTietXuatKhoView Id="@selectedId" />
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
 @code {
     private List<XuatKho> xuatkho;
     private bool showCreateDialog = false;
-    private bool showUpdateDialog = false;
+    private bool showViewDialog = false;
     private int selectedId;
 
     protected override async Task OnInitializedAsync()
@@ -86,6 +110,18 @@ else
     {
         showCreateDialog = false;
     }
+    private List<ChiTietXuatKho> chiTietXuatKhoList = new();
+
+    private void OpenViewDialog(int id)
+    {
+        selectedId = id;
+        showViewDialog = true;
+    }
+
+    private void CloseViewDialog()
+    {
+        showViewDialog = false;
+    }
 
     private async Task DeleteXuatKho(int id)
     {
@@ -95,7 +131,7 @@ else
         var response = await HttpClient.DeleteAsync($"api/xuatkho/delete/{id}");
         if (response.IsSuccessStatusCode)
         {
-            xuatkho = await XuatKhoService.GetAllXuatKho(); 
+            xuatkho = await XuatKhoService.GetAllXuatKho();
         }
         else
         {
@@ -108,4 +144,5 @@ else
         showCreateDialog = false;
         xuatkho = await XuatKhoService.GetAllXuatKho();
     }
-}
+    
+} 

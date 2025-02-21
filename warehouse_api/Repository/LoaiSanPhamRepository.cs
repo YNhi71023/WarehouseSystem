@@ -13,11 +13,16 @@ namespace warehouse_api.Repository
         {
             _connectionString = configuration.GetConnectionString("DefaultConnection");
         }
-
+       
         public async Task<IEnumerable<LoaiSanPham>> GetAllLoaiSanPham()
         {
-            using var connection = new SqlConnection(_connectionString);
-            return await connection.QueryAsync<LoaiSanPham>("[dbo].[LoaiSanPham.GetAll]", commandType: CommandType.StoredProcedure);
+            using(var connection = new SqlConnection(_connectionString))
+            {
+                return await connection.QueryAsync<LoaiSanPham>(
+                    "[dbo].[LoaiSanPham.GetAll]",
+                    commandType: CommandType.StoredProcedure
+                    );
+            }           
         }
         public async Task<LoaiSanPham?> GetByIdLoaiSanPham(int id)
         {

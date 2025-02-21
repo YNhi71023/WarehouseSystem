@@ -40,7 +40,7 @@ namespace warehouse_api.Controllers
                 return BadRequest("Dữ liệu không hợp lệ.");
             }
 
-            var notification = await _repository.CreateKho(k);
+            var notification = await _repository.CreateKho( k);
             return Ok(new { Message = notification });
         }
         [HttpPut("update")]
@@ -51,7 +51,7 @@ namespace warehouse_api.Controllers
                 return BadRequest("Dữ liệu không hợp lệ.");
             }
 
-            var updatedKho = await _repository.UpdateKho(k);
+            var updatedKho = await _repository.UpdateKho( k);
 
             if (updatedKho == null)
             {

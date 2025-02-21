@@ -14,4 +14,15 @@ namespace warehouseserver.Models
         public string? GhiChu { get; set; }
         public string TenKho { get; set; }
     }
+    public class ChiTietXuatKho: ChiTietXuatKhoUpdate
+    {
+        public string TenSanPham { get; set; }
+    }
+    public class ChiTietXuatKhoUpdate
+    {
+        public int XuatKhoId { get; set; }
+        public int SanPhamId { get; set; }
+        public int SLXuat { get; set; }
+        public int DonGiaXuat { get; set; }
+    }
 }

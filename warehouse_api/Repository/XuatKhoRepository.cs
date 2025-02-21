@@ -16,8 +16,13 @@ namespace warehouse_api.Repository
 
         public async Task<IEnumerable<XuatKho>> GetAllXuatKho()
         {
-            using var connection = new SqlConnection(_connectionString);
-            return await connection.QueryAsync<XuatKho>("[dbo].[XuatKho.GetAll]", commandType: CommandType.StoredProcedure);
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                return await connection.QueryAsync<XuatKho>(
+                    "[dbo].[XuatKho.GetAll]",
+                    commandType: CommandType.StoredProcedure
+                    );
+            }
         }
         public async Task<NhapKho?> GetByIdXuatKho(int id)
         {
@@ -31,6 +36,14 @@ namespace warehouse_api.Repository
                     parameters,
                     commandType: CommandType.StoredProcedure);
             }
+        }
+        public async Task<IEnumerable<ChiTietXuatKho>> GetChiTietXuatKho(int xuatKhoId)
+        {
+            using var connection = new SqlConnection(_connectionString);
+            return await connection.QueryAsync<ChiTietXuatKho>(
+                "[dbo].[ChiTietXuatKho.Get]",
+                new { xuatkhoid = xuatKhoId },
+                commandType: CommandType.StoredProcedure);
         }
         public async Task<string> CreateXuatKho(XuatKho xk)
         {
@@ -51,9 +64,45 @@ namespace warehouse_api.Repository
                 return result ?? "Không có thông báo.";
             }
         }
+        public async Task<string> CreateChiTietXuatKho(ChiTietXuatKho x)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var parameters = new DynamicParameters();
+                parameters.Add("@xuatkhoid", x.XuatKhoId);
+                parameters.Add("@sanphamid", x.SanPhamId);
+                parameters.Add("@slxuat", x.SLXuat);
+                parameters.Add("@dongiaxuat", x.DonGiaXuat);
 
+                var result = await connection.ExecuteScalarAsync<string>(
+                    "[dbo].[ChiTietXuatKho.Create]",
+                    parameters,
+                    commandType: CommandType.StoredProcedure
+                );
 
-        public async Task<bool> DeleteXuatKho(int id)
+                return result ?? "Không có thông báo.";
+            }
+        }
+        public async Task<bool> UpdateChiTietXuatKho(ChiTietXuatKho x)
+        {
+            using (var connection = new SqlConnection(_connectionString))
+            {
+                var parameters = new DynamicParameters();
+                parameters.Add("@xuatkhoid", x.XuatKhoId);
+                parameters.Add("@sanphamid", x.SanPhamId);
+                parameters.Add("@slxuat", x.SLXuat);
+                parameters.Add("@dongiaxuat", x.DonGiaXuat);
+
+                var affectedRows = await connection.ExecuteAsync(
+                    "[dbo].[ChiTietXuatKho.Update]",
+                    parameters,
+                    commandType: CommandType.StoredProcedure
+                );
+
+                return affectedRows > 0;
+            }
+        }
+        public async Task<bool> DeleteXuatKho( int id)
         {
             using (var connection = new SqlConnection(_connectionString))
             {
